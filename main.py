@@ -167,15 +167,6 @@ def main():
                         user_id = event.object.message['from_id']
                         first_name = vk.users.get(user_ids = (user_id))[0]['first_name']
                         appeal = '[id%i|%s]' % (user_id, first_name)
-                    if event.object.message['text'].lower() == 'отключить упоминания' or event.object.message['text'].lower() == 'mention off':
-                        if event.object.message['from_id'] == 597776932:
-                            #изменение конфига
-                            with open("config.yaml") as file:
-                                 cfg = yaml.load(file, Loader=yaml.FullLoader)
-                            cfg['mention'] = 0
-                            with open('config.yaml', 'w') as file:
-                                documents = yaml.dump(cfg, file)
-                            ###
                     if event.object.message['text'].lower() == 'включить упоминания' or event.object.message['text'].lower() == 'mention on':
                         if event.object.message['from_id'] == 597776932:
                             #изменение конфига
@@ -185,6 +176,141 @@ def main():
                             with open('config.yaml', 'w') as file:
                                 documents = yaml.dump(cfg, file)
                             ###
+                        if event.from_chat:
+                            vk.messages.send(
+                            key = (''),
+                            server = (''),
+                            ts=(''),
+                            random_id = get_random_id(),
+                            message = 'tweak mention turned on',
+                            chat_id = event.chat_id
+                            )
+                    if event.object.message['text'].lower() == 'отключить упоминания' or event.object.message['text'].lower() == 'mention off':
+                        if event.object.message['from_id'] == 597776932:
+                            #изменение конфига
+                            with open("config.yaml") as file:
+                                 cfg = yaml.load(file, Loader=yaml.FullLoader)
+                            cfg['mention'] = 0
+                            with open('config.yaml', 'w') as file:
+                                documents = yaml.dump(cfg, file)
+                            ###
+                        if event.from_chat:
+                            vk.messages.send(
+                            key = (''),
+                            server = (''),
+                            ts=(''),
+                            random_id = get_random_id(),
+                            message = 'tweak mention turned off',
+                            chat_id = event.chat_id
+                            )
+                    if event.object.message['text'].lower() == 'включить котик' or event.object.message['text'].lower() == 'cat on':
+                        if event.object.message['from_id'] == 597776932:
+                            #изменение конфига
+                            with open("config.yaml") as file:
+                                 cfg = yaml.load(file, Loader=yaml.FullLoader)
+                            cfg['cat'] = 1
+                            with open('config.yaml', 'w') as file:
+                                documents = yaml.dump(cfg, file)
+                            ###
+                        if event.from_chat:
+                            vk.messages.send(
+                            key = (''),
+                            server = (''),
+                            ts=(''),
+                            random_id = get_random_id(),
+                            message = 'tweak cat turned on',
+                            chat_id = event.chat_id
+                            )
+                    if event.object.message['text'].lower() == 'отключить котик' or event.object.message['text'].lower() == 'cat off':
+                        if event.object.message['from_id'] == 597776932:
+                            #изменение конфига
+                            with open("config.yaml") as file:
+                                 cfg = yaml.load(file, Loader=yaml.FullLoader)
+                            cfg['cat'] = 0
+                            with open('config.yaml', 'w') as file:
+                                documents = yaml.dump(cfg, file)
+                            ###
+                        if event.from_chat:
+                            vk.messages.send(
+                            key = (''),
+                            server = (''),
+                            ts=(''),
+                            random_id = get_random_id(),
+                            message = 'tweak cat turned off',
+                            chat_id = event.chat_id
+                            )
+                    if event.object.message['text'].lower() == 'включить космос' or event.object.message['text'].lower() == 'space on':
+                        if event.object.message['from_id'] == 597776932:
+                            #изменение конфига
+                            with open("config.yaml") as file:
+                                 cfg = yaml.load(file, Loader=yaml.FullLoader)
+                            cfg['cat'] = 1
+                            with open('config.yaml', 'w') as file:
+                                documents = yaml.dump(cfg, file)
+                            ###
+                        if event.from_chat:
+                            vk.messages.send(
+                            key = (''),
+                            server = (''),
+                            ts=(''),
+                            random_id = get_random_id(),
+                            message = 'tweak space turned on',
+                            chat_id = event.chat_id
+                            )
+                    if event.object.message['text'].lower() == 'отключить космос' or event.object.message['text'].lower() == 'space off':
+                        if event.object.message['from_id'] == 597776932:
+                            #изменение конфига
+                            with open("config.yaml") as file:
+                                 cfg = yaml.load(file, Loader=yaml.FullLoader)
+                            cfg['cat'] = 0
+                            with open('config.yaml', 'w') as file:
+                                documents = yaml.dump(cfg, file)
+                            ###
+                        if event.from_chat:
+                            vk.messages.send(
+                            key = (''),
+                            server = (''),
+                            ts=(''),
+                            random_id = get_random_id(),
+                            message = 'tweak space turned off',
+                            chat_id = event.chat_id
+                            )
+                    if event.object.message['text'].lower() == 'включить картина' or event.object.message['text'].lower() == 'art on':
+                        if event.object.message['from_id'] == 597776932:
+                            #изменение конфига
+                            with open("config.yaml") as file:
+                                 cfg = yaml.load(file, Loader=yaml.FullLoader)
+                            cfg['cat'] = 1
+                            with open('config.yaml', 'w') as file:
+                                documents = yaml.dump(cfg, file)
+                            ###
+                        if event.from_chat:
+                            vk.messages.send(
+                            key = (''),
+                            server = (''),
+                            ts=(''),
+                            random_id = get_random_id(),
+                            message = 'tweak art turned on',
+                            chat_id = event.chat_id
+                            )
+                    if event.object.message['text'].lower() == 'отключить картина' or event.object.message['text'].lower() == 'art off':
+                        if event.object.message['from_id'] == 597776932:
+                            #изменение конфига
+                            with open("config.yaml") as file:
+                                 cfg = yaml.load(file, Loader=yaml.FullLoader)
+                            cfg['cat'] = 0
+                            with open('config.yaml', 'w') as file:
+                                documents = yaml.dump(cfg, file)
+                            ###
+                        if event.from_chat:
+                            vk.messages.send(
+                            key = (''),
+                            server = (''),
+                            ts=(''),
+                            random_id = get_random_id(),
+                            message = 'tweak art turned off',
+                            chat_id = event.chat_id
+                            )
                     if event.object.message['text'].lower() == 'help' or event.object.message['text'].lower() == 'помощь':
                         today = datetime.datetime.today()
                         if event.from_chat:
@@ -263,48 +389,79 @@ def main():
                             message = appeal + week[tomorrow.isocalendar()[1] % 2],
                             chat_id = event.chat_id
                             )
-                    if event.object.message['text'].lower() == 'котик':
-                        try:
-                            urllib.request.urlretrieve("https://thiscatdoesnotexist.com/", "img.jpg")
-                            photo = vk_upl.photo_messages('img.jpg')
-                            owner_id = photo[0]['owner_id']
-                            photo_id = photo[0]['id']
-                            access_key = photo[0]['access_key']
-                            attachment = f'photo{owner_id}_{photo_id}_{access_key}'
-                        except:
-                            print("Error")
-                        else:
-                            if event.from_chat:
-                                vk.messages.send(
-                                key = (''),
-                                server = (''),
-                                ts=(''),
-                                random_id = get_random_id(),
-                                message = appeal,
-                                chat_id = event.chat_id,
-                                attachment=attachment
-                                )
-                    if event.object.message['text'].lower() == 'космос':
-                        try:
-                            urllib.request.urlretrieve('https://firebasestorage.googleapis.com/v0/b/thisnightskydoesnotexist.appspot.com/o/images%2Fseed' + str(random.randint(1, 5001)).zfill(4) + '.jpg?alt=media', 'img.jpg')
-                            photo = vk_upl.photo_messages('img.jpg')
-                            owner_id = photo[0]['owner_id']
-                            photo_id = photo[0]['id']
-                            access_key = photo[0]['access_key']
-                            attachment = f'photo{owner_id}_{photo_id}_{access_key}'
-                        except:
-                            print("Error")
-                        else:
-                            if event.from_chat:
-                                vk.messages.send(
-                                key = (''),
-                                server = (''),
-                                ts=(''),
-                                random_id = get_random_id(),
-                                message = appeal,
-                                chat_id = event.chat_id,
-                                attachment=attachment
-                                )
+                    if event.object.message['text'].lower() == 'котик' or event.object.message['text'].lower() == 'cat':
+                        with open("config.yaml") as file:
+                             cfg = yaml.load(file, Loader=yaml.FullLoader)
+                        if cfg['cat'] == 1:
+                                appeal = ''
+                            try:
+                                urllib.request.urlretrieve("https://thiscatdoesnotexist.com/", "img.jpg")
+                                photo = vk_upl.photo_messages('img.jpg')
+                                owner_id = photo[0]['owner_id']
+                                photo_id = photo[0]['id']
+                                access_key = photo[0]['access_key']
+                                attachment = f'photo{owner_id}_{photo_id}_{access_key}'
+                            except:
+                                print("Error")
+                            else:
+                                if event.from_chat:
+                                    vk.messages.send(
+                                    key = (''),
+                                    server = (''),
+                                    ts=(''),
+                                    random_id = get_random_id(),
+                                    message = appeal,
+                                    chat_id = event.chat_id,
+                                    attachment=attachment
+                                    )
+                    if event.object.message['text'].lower() == 'космос' or event.object.message['text'].lower() == 'space':
+                        with open("config.yaml") as file:
+                             cfg = yaml.load(file, Loader=yaml.FullLoader)
+                        if cfg['space'] == 1:
+                            try:
+                                urllib.request.urlretrieve('https://firebasestorage.googleapis.com/v0/b/thisnightskydoesnotexist.appspot.com/o/images%2Fseed' + str(random.randint(1, 5001)).zfill(4) + '.jpg?alt=media', 'img.jpg')
+                                photo = vk_upl.photo_messages('img.jpg')
+                                owner_id = photo[0]['owner_id']
+                                photo_id = photo[0]['id']
+                                access_key = photo[0]['access_key']
+                                attachment = f'photo{owner_id}_{photo_id}_{access_key}'
+                            except:
+                                print("Error")
+                            else:
+                                if event.from_chat:
+                                    vk.messages.send(
+                                    key = (''),
+                                    server = (''),
+                                    ts=(''),
+                                    random_id = get_random_id(),
+                                    message = appeal,
+                                    chat_id = event.chat_id,
+                                    attachment=attachment
+                                    )
+                    if event.object.message['text'].lower() == 'картина' or event.object.message['text'].lower() == 'art':
+                        with open("config.yaml") as file:
+                             cfg = yaml.load(file, Loader=yaml.FullLoader)
+                        if cfg['art'] == 1:
+                            try:
+                                urllib.request.urlretrieve('https://thisartworkdoesnotexist.com/', 'img.jpg')
+                                photo = vk_upl.photo_messages('img.jpg')
+                                owner_id = photo[0]['owner_id']
+                                photo_id = photo[0]['id']
+                                access_key = photo[0]['access_key']
+                                attachment = f'photo{owner_id}_{photo_id}_{access_key}'
+                            except:
+                                print("Error")
+                            else:
+                                if event.from_chat:
+                                    vk.messages.send(
+                                    key = (''),
+                                    server = (''),
+                                    ts=(''),
+                                    random_id = get_random_id(),
+                                    message = appeal,
+                                    chat_id = event.chat_id,
+                                    attachment=attachment
+                                    )
         except Exception as e:
             print(e)
             pass
