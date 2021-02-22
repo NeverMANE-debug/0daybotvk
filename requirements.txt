@@ -1,0 +1,1 @@
+vk requests vk_api VkBotLongPoll VkBotEventType VkLongPoll yaml
