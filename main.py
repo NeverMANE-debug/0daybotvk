@@ -244,7 +244,7 @@ def main():
                             #изменение конфига
                             with open("config.yaml") as file:
                                  cfg = yaml.load(file, Loader=yaml.FullLoader)
-                            cfg['cat'] = 1
+                            cfg['space'] = 1
                             with open('config.yaml', 'w') as file:
                                 documents = yaml.dump(cfg, file)
                             ###
@@ -262,7 +262,7 @@ def main():
                             #изменение конфига
                             with open("config.yaml") as file:
                                  cfg = yaml.load(file, Loader=yaml.FullLoader)
-                            cfg['cat'] = 0
+                            cfg['space'] = 0
                             with open('config.yaml', 'w') as file:
                                 documents = yaml.dump(cfg, file)
                             ###
@@ -280,7 +280,7 @@ def main():
                             #изменение конфига
                             with open("config.yaml") as file:
                                  cfg = yaml.load(file, Loader=yaml.FullLoader)
-                            cfg['cat'] = 1
+                            cfg['art'] = 1
                             with open('config.yaml', 'w') as file:
                                 documents = yaml.dump(cfg, file)
                             ###
@@ -298,7 +298,7 @@ def main():
                             #изменение конфига
                             with open("config.yaml") as file:
                                  cfg = yaml.load(file, Loader=yaml.FullLoader)
-                            cfg['cat'] = 0
+                            cfg['art'] = 0
                             with open('config.yaml', 'w') as file:
                                 documents = yaml.dump(cfg, file)
                             ###
@@ -393,7 +393,6 @@ def main():
                         with open("config.yaml") as file:
                              cfg = yaml.load(file, Loader=yaml.FullLoader)
                         if cfg['cat'] == 1:
-                                appeal = ''
                             try:
                                 urllib.request.urlretrieve("https://thiscatdoesnotexist.com/", "img.jpg")
                                 photo = vk_upl.photo_messages('img.jpg')
