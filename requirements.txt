@@ -1,5 +1,4 @@
 vk
 requests
 vk_api
-VkLongPoll
 yaml
