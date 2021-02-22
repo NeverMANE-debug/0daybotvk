@@ -2,3 +2,4 @@ vk
 requests
 vk_api
 pyyaml
+pytz

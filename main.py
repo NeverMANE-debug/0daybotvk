@@ -8,6 +8,9 @@ import random
 from vk_api.bot_longpoll import VkBotLongPoll, VkBotEventType
 from vk_api.longpoll import VkLongPoll, VkEventType
 import yaml
+import pytz
+
+tz = pytz.timezone('Europe/Moscow')
 
 #vk.messages.send(peer_id=event.object.peer_id, random_id=0, attachment=attachment)
 
@@ -320,19 +323,19 @@ def main():
                             ts=(''),
                             random_id = get_random_id(),
                             message = appeal + """
-                            __ 0-day beta 1.0 __ 
+__ 0-day beta 1.0 __ 
                             
-                            Команды:
+Команды:
                             
-                            пары/пары сегодня - расписание пар сегодня
-                            пары завтра - расписание пар завтра
-                            пары вчера - расписание пар вчера
-                            неделя - какая неделя
+пары/пары сегодня - расписание пар сегодня
+пары завтра - расписание пар завтра
+пары вчера - расписание пар вчера
+неделя - какая неделя
                             """,
                             chat_id = event.chat_id
                             )
                     if event.object.message['text'].lower() == 'пары' or event.object.message['text'].lower() == 'пары сегодня':
-                        today = datetime.datetime.today()
+                        today = datetime.datetime.now(tz)
                         if event.from_chat:
                             vk.messages.send(
                             key = (''),
@@ -343,7 +346,7 @@ def main():
                             chat_id = event.chat_id
                             )
                     if event.object.message['text'].lower() == 'пары завтра':
-                        today = datetime.datetime.today()
+                        today = datetime.datetime.now(tz)
                         tomorrow = today + datetime.timedelta(days = 1)
                         if event.from_chat:
                             vk.messages.send(
@@ -355,7 +358,7 @@ def main():
                             chat_id = event.chat_id
                             )
                     if event.object.message['text'].lower() == 'пары вчера':
-                        today = datetime.datetime.today()
+                        today = datetime.datetime.now(tz)
                         yesterday = today - datetime.timedelta(days = 1)
                         if event.from_chat:
                             vk.messages.send(
@@ -367,7 +370,7 @@ def main():
                             chat_id = event.chat_id
                             )
                     if event.object.message['text'].lower() == 'неделя':
-                        today = datetime.datetime.today()
+                        today = datetime.datetime.now(tz)
                         if event.from_chat:
                             vk.messages.send(
                             key = (''),
@@ -378,7 +381,7 @@ def main():
                             chat_id = event.chat_id
                             )
                     if event.object.message['text'].lower() == 'неделя завтра':
-                        today = datetime.datetime.today()
+                        today = datetime.datetime.now(tz)
                         tomorrow = today + datetime.timedelta(days = 1)
                         if event.from_chat:
                             vk.messages.send(
