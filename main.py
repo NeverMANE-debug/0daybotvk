@@ -176,15 +176,15 @@ def main():
                             with open('config.yaml', 'w') as file:
                                 documents = yaml.dump(cfg, file)
                             ###
-							if event.from_chat:
-								vk.messages.send(
-								key = (''),
-								server = (''),
-								ts=(''),
-								random_id = get_random_id(),
-								message = 'tweak mention turned on',
-								chat_id = event.chat_id
-								)
+                            if event.from_chat:
+                                vk.messages.send(
+                                key = (''),
+                                server = (''),
+                                ts=(''),
+                                random_id = get_random_id(),
+                                message = 'tweak mention turned on',
+                                chat_id = event.chat_id
+                                )
                     if event.object.message['text'].lower() == 'отключить упоминания' or event.object.message['text'].lower() == 'mention off':
                         if event.object.message['from_id'] == 597776932:
                             #изменение конфига
@@ -194,15 +194,15 @@ def main():
                             with open('config.yaml', 'w') as file:
                                 documents = yaml.dump(cfg, file)
                             ###
-							if event.from_chat:
-								vk.messages.send(
-								key = (''),
-								server = (''),
-								ts=(''),
-								random_id = get_random_id(),
-								message = 'tweak mention turned off',
-								chat_id = event.chat_id
-								)
+                            if event.from_chat:
+                                vk.messages.send(
+                                key = (''),
+                                server = (''),
+                                ts=(''),
+                                random_id = get_random_id(),
+                                message = 'tweak mention turned off',
+                                chat_id = event.chat_id
+                                )
                     if event.object.message['text'].lower() == 'включить котик' or event.object.message['text'].lower() == 'cat on':
                         if event.object.message['from_id'] == 597776932:
                             #изменение конфига
@@ -212,15 +212,15 @@ def main():
                             with open('config.yaml', 'w') as file:
                                 documents = yaml.dump(cfg, file)
                             ###
-							if event.from_chat:
-								vk.messages.send(
-								key = (''),
-								server = (''),
-								ts=(''),
-								random_id = get_random_id(),
-								message = 'tweak cat turned on',
-								chat_id = event.chat_id
-								)
+                            if event.from_chat:
+                                vk.messages.send(
+                                key = (''),
+                                server = (''),
+                                ts=(''),
+                                random_id = get_random_id(),
+                                message = 'tweak cat turned on',
+                                chat_id = event.chat_id
+                                )
                     if event.object.message['text'].lower() == 'отключить котик' or event.object.message['text'].lower() == 'cat off':
                         if event.object.message['from_id'] == 597776932:
                             #изменение конфига
@@ -230,15 +230,15 @@ def main():
                             with open('config.yaml', 'w') as file:
                                 documents = yaml.dump(cfg, file)
                             ###
-							if event.from_chat:
-								vk.messages.send(
-								key = (''),
-								server = (''),
-								ts=(''),
-								random_id = get_random_id(),
-								message = 'tweak cat turned off',
-								chat_id = event.chat_id
-								)
+                            if event.from_chat:
+                                vk.messages.send(
+                                key = (''),
+                                server = (''),
+                                ts=(''),
+                                random_id = get_random_id(),
+                                message = 'tweak cat turned off',
+                                chat_id = event.chat_id
+                                )
                     if event.object.message['text'].lower() == 'включить космос' or event.object.message['text'].lower() == 'space on':
                         if event.object.message['from_id'] == 597776932:
                             #изменение конфига
@@ -248,15 +248,15 @@ def main():
                             with open('config.yaml', 'w') as file:
                                 documents = yaml.dump(cfg, file)
                             ###
-							if event.from_chat:
-								vk.messages.send(
-								key = (''),
-								server = (''),
-								ts=(''),
-								random_id = get_random_id(),
-								message = 'tweak space turned on',
-								chat_id = event.chat_id
-								)
+                            if event.from_chat:
+                                vk.messages.send(
+                                key = (''),
+                                server = (''),
+                                ts=(''),
+                                random_id = get_random_id(),
+                                message = 'tweak space turned on',
+                                chat_id = event.chat_id
+                                )
                     if event.object.message['text'].lower() == 'отключить космос' or event.object.message['text'].lower() == 'space off':
                         if event.object.message['from_id'] == 597776932:
                             #изменение конфига
@@ -266,15 +266,15 @@ def main():
                             with open('config.yaml', 'w') as file:
                                 documents = yaml.dump(cfg, file)
                             ###
-							if event.from_chat:
-								vk.messages.send(
-								key = (''),
-								server = (''),
-								ts=(''),
-								random_id = get_random_id(),
-								message = 'tweak space turned off',
-								chat_id = event.chat_id
-								)
+                            if event.from_chat:
+                                vk.messages.send(
+                                key = (''),
+                                server = (''),
+                                ts=(''),
+                                random_id = get_random_id(),
+                                message = 'tweak space turned off',
+                                chat_id = event.chat_id
+                                )
                     if event.object.message['text'].lower() == 'включить картина' or event.object.message['text'].lower() == 'art on':
                         if event.object.message['from_id'] == 597776932:
                             #изменение конфига
@@ -284,15 +284,15 @@ def main():
                             with open('config.yaml', 'w') as file:
                                 documents = yaml.dump(cfg, file)
                             ###
-							if event.from_chat:
-								vk.messages.send(
-								key = (''),
-								server = (''),
-								ts=(''),
-								random_id = get_random_id(),
-								message = 'tweak art turned on',
-								chat_id = event.chat_id
-								)
+                            if event.from_chat:
+                                vk.messages.send(
+                                key = (''),
+                                server = (''),
+                                ts=(''),
+                                random_id = get_random_id(),
+                                message = 'tweak art turned on',
+                                chat_id = event.chat_id
+                                )
                     if event.object.message['text'].lower() == 'отключить картина' or event.object.message['text'].lower() == 'art off':
                         if event.object.message['from_id'] == 597776932:
                             #изменение конфига
@@ -302,15 +302,15 @@ def main():
                             with open('config.yaml', 'w') as file:
                                 documents = yaml.dump(cfg, file)
                             ###
-							if event.from_chat:
-								vk.messages.send(
-								key = (''),
-								server = (''),
-								ts=(''),
-								random_id = get_random_id(),
-								message = 'tweak art turned off',
-								chat_id = event.chat_id
-								)
+                            if event.from_chat:
+                                vk.messages.send(
+                                key = (''),
+                                server = (''),
+                                ts=(''),
+                                random_id = get_random_id(),
+                                message = 'tweak art turned off',
+                                chat_id = event.chat_id
+                                )
                     if event.object.message['text'].lower() == 'help' or event.object.message['text'].lower() == 'помощь':
                         today = datetime.datetime.today()
                         if event.from_chat:
