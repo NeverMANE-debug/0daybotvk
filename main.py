@@ -327,11 +327,24 @@ def main():
 __ 0-day beta 1.0 __ 
                             
 Команды:
-                            
-пары/пары сегодня - расписание пар сегодня
-пары завтра - расписание пар завтра
-пары вчера - расписание пар вчера
-неделя - какая неделя
+
+[            
+пары / пары сегодня
+пары завтра
+пары вчера
+пары послезавтра
+пары позавчера
+пары послепослезавтра
+пары позапозавчера
+]
+
+[
+неделя - какая неделя (четная, нечетная)
+]
+
+[
+пары в [день недели] - расписание в соответствующий день недели
+]
                             """,
                             chat_id = event.chat_id
                             )
@@ -429,7 +442,7 @@ __ 0-day beta 1.0 __
                             message = appeal + table[today.isocalendar()[1] % 2][0],
                             chat_id = event.chat_id
                             )
-                    if event.object.message['text'].lower() in ['пары во вторник', 'расписание во вторник', 'пары во вт', 'расписание во вт']:
+                    if event.object.message['text'].lower() in ['пары во вторник', 'расписание во вторник', 'пары во вт', 'расписание во вт', 'пары в вторник', 'расписание в вторник', 'пары в вт', 'расписание в вт']:
                         today = datetime.datetime.now(tz)
                         if event.from_chat:
                             vk.messages.send(
@@ -516,6 +529,16 @@ __ 0-day beta 1.0 __
                             ts=(''),
                             random_id = get_random_id(),
                             message = appeal + week[tomorrow.isocalendar()[1] % 2],
+                            chat_id = event.chat_id
+                            )
+                    if event.object.message['text'].lower() in ['пары отменить', 'отменить пары']:
+                        if event.from_chat:
+                            vk.messages.send(
+                            key = (''),
+                            server = (''),
+                            ts=(''),
+                            random_id = get_random_id(),
+                            message = "Отказано в доступе.",
                             chat_id = event.chat_id
                             )
                     if event.object.message['text'].lower() == 'котик' or event.object.message['text'].lower() == 'cat':
