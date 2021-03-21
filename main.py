@@ -61,7 +61,7 @@ table = {
 Физика лек. (522)
         
 4 пара (15:20 - 16:55)
-Фиизка (522)
+Физика (522)
         """,
         4 : """
 1 пара (9:30 - 11:05)
@@ -96,7 +96,8 @@ table = {
 Яз. програм. лек (370лк)
 
 4 пара (15:20 - 16:55)
-Яз. програм. (383)
+1 - Яз. програм. (383)
+2 - Экология (501)
         """,
         1 : """
 1 пара (9:30 - 11:05)
@@ -334,7 +335,7 @@ __ 0-day beta 1.0 __
                             """,
                             chat_id = event.chat_id
                             )
-                    if event.object.message['text'].lower() == 'пары' or event.object.message['text'].lower() == 'пары сегодня':
+                    if event.object.message['text'].lower() in ['пары сегодня', 'пары', 'расписание', 'расписание сегодня']:
                         today = datetime.datetime.now(tz)
                         if event.from_chat:
                             vk.messages.send(
@@ -345,7 +346,7 @@ __ 0-day beta 1.0 __
                             message = appeal + table[today.isocalendar()[1] % 2][today.weekday()],
                             chat_id = event.chat_id
                             )
-                    if event.object.message['text'].lower() == 'пары завтра':
+                    if event.object.message['text'].lower() in ['пары завтра', 'расписание завтра']:
                         today = datetime.datetime.now(tz)
                         tomorrow = today + datetime.timedelta(days = 1)
                         if event.from_chat:
@@ -357,7 +358,31 @@ __ 0-day beta 1.0 __
                             message = appeal + table[tomorrow.isocalendar()[1] % 2][tomorrow.weekday()],
                             chat_id = event.chat_id
                             )
-                    if event.object.message['text'].lower() == 'пары вчера':
+                    if event.object.message['text'].lower() in ['пары послезавтра', 'расписание послезавтра']:
+                        today = datetime.datetime.now(tz)
+                        tomorrow = today + datetime.timedelta(days = 2)
+                        if event.from_chat:
+                            vk.messages.send(
+                            key = (''),
+                            server = (''),
+                            ts=(''),
+                            random_id = get_random_id(),
+                            message = appeal + table[tomorrow.isocalendar()[1] % 2][tomorrow.weekday()],
+                            chat_id = event.chat_id
+                            )
+                    if event.object.message['text'].lower() in ['пары послепослезавтра', 'расписание послепослезавтра']:
+                        today = datetime.datetime.now(tz)
+                        tomorrow = today + datetime.timedelta(days = 3)
+                        if event.from_chat:
+                            vk.messages.send(
+                            key = (''),
+                            server = (''),
+                            ts=(''),
+                            random_id = get_random_id(),
+                            message = appeal + table[tomorrow.isocalendar()[1] % 2][tomorrow.weekday()],
+                            chat_id = event.chat_id
+                            )
+                    if event.object.message['text'].lower() in ['пары вчера', 'расписание вчера']:
                         today = datetime.datetime.now(tz)
                         yesterday = today - datetime.timedelta(days = 1)
                         if event.from_chat:
@@ -367,6 +392,107 @@ __ 0-day beta 1.0 __
                             ts=(''),
                             random_id = get_random_id(),
                             message = appeal + table[yesterday.isocalendar()[1] % 2][yesterday.weekday()],
+                            chat_id = event.chat_id
+                            )
+                    if event.object.message['text'].lower() in ['пары позавчера', 'расписание позавчера']:
+                        today = datetime.datetime.now(tz)
+                        yesterday = today - datetime.timedelta(days = 2)
+                        if event.from_chat:
+                            vk.messages.send(
+                            key = (''),
+                            server = (''),
+                            ts=(''),
+                            random_id = get_random_id(),
+                            message = appeal + table[yesterday.isocalendar()[1] % 2][yesterday.weekday()],
+                            chat_id = event.chat_id
+                            )
+                    if event.object.message['text'].lower() in ['пары позапозавчера', 'расписание позапозавчера']:
+                        today = datetime.datetime.now(tz)
+                        yesterday = today - datetime.timedelta(days = 3)
+                        if event.from_chat:
+                            vk.messages.send(
+                            key = (''),
+                            server = (''),
+                            ts=(''),
+                            random_id = get_random_id(),
+                            message = appeal + table[yesterday.isocalendar()[1] % 2][yesterday.weekday()],
+                            chat_id = event.chat_id
+                            )
+                    if event.object.message['text'].lower() in ['пары в понедельник', 'расписание в понедельник', 'пары в пн', 'расписание в пн']:
+                        today = datetime.datetime.now(tz)
+                        if event.from_chat:
+                            vk.messages.send(
+                            key = (''),
+                            server = (''),
+                            ts=(''),
+                            random_id = get_random_id(),
+                            message = appeal + table[today.isocalendar()[1] % 2][0],
+                            chat_id = event.chat_id
+                            )
+                    if event.object.message['text'].lower() in ['пары во вторник', 'расписание во вторник', 'пары во вт', 'расписание во вт']:
+                        today = datetime.datetime.now(tz)
+                        if event.from_chat:
+                            vk.messages.send(
+                            key = (''),
+                            server = (''),
+                            ts=(''),
+                            random_id = get_random_id(),
+                            message = appeal + table[today.isocalendar()[1] % 2][1],
+                            chat_id = event.chat_id
+                            )
+                    if event.object.message['text'].lower() in ['пары в среду', 'расписание в среду', 'пары во ср', 'расписание в ср']:
+                        today = datetime.datetime.now(tz)
+                        if event.from_chat:
+                            vk.messages.send(
+                            key = (''),
+                            server = (''),
+                            ts=(''),
+                            random_id = get_random_id(),
+                            message = appeal + table[today.isocalendar()[1] % 2][2],
+                            chat_id = event.chat_id
+                            )
+                    if event.object.message['text'].lower() in ['пары в четверг', 'расписание в четверг', 'пары в чт', 'расписание в чт']:
+                        today = datetime.datetime.now(tz)
+                        if event.from_chat:
+                            vk.messages.send(
+                            key = (''),
+                            server = (''),
+                            ts=(''),
+                            random_id = get_random_id(),
+                            message = appeal + table[today.isocalendar()[1] % 2][3],
+                            chat_id = event.chat_id
+                            )
+                    if event.object.message['text'].lower() in ['пары в пятницу', 'расписание в пятницу', 'пары в пт', 'расписание в пт']:
+                        today = datetime.datetime.now(tz)
+                        if event.from_chat:
+                            vk.messages.send(
+                            key = (''),
+                            server = (''),
+                            ts=(''),
+                            random_id = get_random_id(),
+                            message = appeal + table[today.isocalendar()[1] % 2][4],
+                            chat_id = event.chat_id
+                            )
+                    if event.object.message['text'].lower() in ['пары в субботу', 'расписание в субботу', 'пары в сб', 'расписание в сб']:
+                        today = datetime.datetime.now(tz)
+                        if event.from_chat:
+                            vk.messages.send(
+                            key = (''),
+                            server = (''),
+                            ts=(''),
+                            random_id = get_random_id(),
+                            message = appeal + table[today.isocalendar()[1] % 2][5],
+                            chat_id = event.chat_id
+                            )
+                    if event.object.message['text'].lower() in ['пары в воскресенье', 'расписание в воскресенье', 'пары в вс', 'расписание в вс']:
+                        today = datetime.datetime.now(tz)
+                        if event.from_chat:
+                            vk.messages.send(
+                            key = (''),
+                            server = (''),
+                            ts=(''),
+                            random_id = get_random_id(),
+                            message = appeal + table[today.isocalendar()[1] % 2][6],
                             chat_id = event.chat_id
                             )
                     if event.object.message['text'].lower() == 'неделя':
