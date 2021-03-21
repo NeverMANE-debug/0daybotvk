@@ -324,7 +324,7 @@ def main():
                             ts=(''),
                             random_id = get_random_id(),
                             message = appeal + """
-__ 0-day beta 1.0 __ 
+__ 0-day beta 1.1 __ 
                             
 Команды:
 
