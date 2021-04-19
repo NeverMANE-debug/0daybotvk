@@ -705,6 +705,8 @@ def main():
                             if 'reply_message' in event.object.message:
                                 id = event.object.message['reply_message']['from_id']
                                 idflag = 1
+                            elif 'fwd_messages' in event.object.message:
+                                id = event.object.message['fwd_messages'][0]['from_id']
                             else:
                                 try:
                                     id = int((re.search(r'\[(.*?)\|', msg).group(1))[2:])
@@ -717,7 +719,7 @@ def main():
                                 with open("config.yaml") as file:
                                     cfg = yaml.load(file, Loader=yaml.FullLoader)
                                 if id in cfg['banned']:
-                                    cfg['banned'].remove(id)
+                                    cfg['banned'].remove    (id)
                                     with open('config.yaml', 'w') as file:
                                         documents = yaml.dump(cfg, file)
                                     if event.from_chat:
@@ -745,6 +747,9 @@ def main():
                             idflag = 0
                             if 'reply_message' in event.object.message:
                                 id = event.object.message['reply_message']['from_id']
+                                idflag = 1
+                            elif 'fwd_messages' in event.object.message:
+                                id = event.object.message['fwd_messages'][0]['from_id']
                                 idflag = 1
                             else:
                                 try:
