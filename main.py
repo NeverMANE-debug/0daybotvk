@@ -707,6 +707,7 @@ def main():
                                 idflag = 1
                             elif 'fwd_messages' in event.object.message:
                                 id = event.object.message['fwd_messages'][0]['from_id']
+                                idflag = 1
                             else:
                                 try:
                                     id = int((re.search(r'\[(.*?)\|', msg).group(1))[2:])
