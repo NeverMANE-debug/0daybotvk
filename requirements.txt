@@ -3,7 +3,3 @@ requests
 vk_api
 pyyaml
 pytz
-autocorrect
-re
-traceback
-sys
