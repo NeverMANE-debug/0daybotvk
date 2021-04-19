@@ -717,7 +717,7 @@ def main():
                                 with open("config.yaml") as file:
                                     cfg = yaml.load(file, Loader=yaml.FullLoader)
                                 if id in cfg['banned']:
-                                    cfg['banned'].remove    (id)
+                                    cfg['banned'].remove(id)
                                     with open('config.yaml', 'w') as file:
                                         documents = yaml.dump(cfg, file)
                                     if event.from_chat:
