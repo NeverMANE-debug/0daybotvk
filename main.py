@@ -28,7 +28,13 @@ tz = pytz.timezone('Europe/Moscow')
 #vk.messages.send(peer_id=event.object.peer_id, random_id=0, attachment=attachment)
 
 table = config.table
-
+weekdays = {"пн": 0, "понедельник": 0,
+            "вт": 1, "вторник": 1,
+            "ср": 2, "среду": 2,
+            "чт": 3, "четверг": 3,
+            "пт": 4, "пятницу": 4,
+            "сб": 5, "субботу": 5,
+            "вс": 6, "воскресенье": 6, }
 week = {0 : 'Знаменатель (четная неделя)', 1 : 'Числитель (нечетная неделя)'}
 #message = table[datetime.datetime.today().isocalendar()[1] % 2][datetime.datetime.today().weekday()]
 with open("config.yaml", 'r') as stream:
@@ -244,6 +250,54 @@ def main():
                             ts=(''),
                             random_id = get_random_id(),
                             message = appeal + table[today.isocalendar()[1] % 2][today.weekday()],
+                            chat_id = event.chat_id
+                            )
+                    if "пары" in current_message and ("след" in current_message or "следующий" in current_message):
+                        if isBanned(user_id):
+                            if event.from_chat:
+                                vk.messages.send(
+                                    key=(''),
+                                    server=(''),
+                                    ts=(''),
+                                    random_id=get_random_id(),
+                                    message='sorry, you\'re banned',
+                                    chat_id=event.chat_id
+                                )
+                            continue
+                        converted = list(map(str, current_message.split()))
+                        weekday_tmp = converted[-1]
+                        if weekday_tmp in weekdays:
+                            curr_weekday = weekdays[weekday_tmp]
+                            today = datetime.datetime.now(tz)
+                            if event.from_chat:
+                                vk.messages.send(
+                                key = (''),
+                                server = (''),
+                                ts=(''),
+                                random_id = get_random_id(),
+                                message = appeal + table[(today.isocalendar()[1] + 1) % 2][curr_weekday],
+                                chat_id = event.chat_id
+                                )
+                    if "неделя" in current_message and ("след" in current_message or "следующая" in current_message):
+                        if isBanned(user_id):
+                            if event.from_chat:
+                                vk.messages.send(
+                                    key=(''),
+                                    server=(''),
+                                    ts=(''),
+                                    random_id=get_random_id(),
+                                    message='sorry, you\'re banned',
+                                    chat_id=event.chat_id
+                                )
+                            continue
+                        today = datetime.datetime.now(tz)
+                        if event.from_chat:
+                            vk.messages.send(
+                            key = (''),
+                            server = (''),
+                            ts=(''),
+                            random_id = get_random_id(),
+                            message = appeal + week[(today.isocalendar()[1] + 1) % 2],
                             chat_id = event.chat_id
                             )
                     if current_message in ['пары завтра', 'расписание завтра']:
